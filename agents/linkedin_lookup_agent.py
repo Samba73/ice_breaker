@@ -1,6 +1,9 @@
 import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'tools')))
 from dotenv import load_dotenv
-from tools.tools import get_profile_url
+from tools import get_profile_url
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import Tool
@@ -42,5 +45,5 @@ def linkedin_lookup(name: str) -> str:
 
 
 if __name__ == "__main__":
-    linkedin_url = linkedin_lookup(name="Eden Marco")
+    linkedin_url = linkedin_lookup(name="Eden Marco Udemy")
     print(linkedin_url)    

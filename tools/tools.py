@@ -6,4 +6,4 @@ def get_profile_url(name: str):
 
     search = TavilySearchResults()
     res = search.run(f"{name}")
-    return res
+    return res[0]["url"]
